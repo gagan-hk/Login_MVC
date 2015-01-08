@@ -17,6 +17,12 @@ public class RegisterController extends HttpServlet {
         String name = request.getParameter("user");
         String password = request.getParameter("pwd");
 
+        if(name == "" || password == "" ) {
+            out.print("<h4>Field cannot be Empty<h4>");
+            RequestDispatcher rd = request.getRequestDispatcher("register.jsp");
+            rd.include(request , response);
+            return;
+        }
         LoginBean bean = new LoginBean();
         bean.setName(name);
         bean.setPassword(password);

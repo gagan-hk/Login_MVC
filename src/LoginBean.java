@@ -39,7 +39,7 @@ public class LoginBean {
                 //out.println(an);
             }
             //System.out.print(cnt);
-
+            con.close();
             if(cnt > 0) {
                 return true;
             }
@@ -70,12 +70,14 @@ public class LoginBean {
             //System.out.print(cnt);
 
             if(cnt > 0) {
+                con.close();
                 return false;
             }
-            System.out.println("ggn");
+            //System.out.println("ggn");
             query = "Insert into USERS values ('" + userid + "','" +pwd+ "')";
             int affected = stat.executeUpdate(query);
             System.out.println(affected);
+            con.close();
         }
         catch(Exception e) {
             System.out.println("SQLException caught: " +e.getMessage());
