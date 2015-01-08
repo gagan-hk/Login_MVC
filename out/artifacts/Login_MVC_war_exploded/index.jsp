@@ -8,30 +8,39 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <title>Hello</title>
+<head>
+    <style>
+        #style1{
+            margin-top:200px ;
+            margin-left: 500px;
+            margin-right: auto;
+            width: 70%;
+        }
+    </style>
+</head>
 <body>
+<div>
 <h1>Enter Login Details</h1>
 <form action="LoginController" method="POST">
     <table>
         <tr>
-            <td><h3>Username: <input type="text" name="user"></h3></td>
-            <td><h3>Password <input type="password" name="pwd" /></h3></td>
+            <td><h3>Username: </h3></td>
+            <td><h3><input type="text" name="user"></h3></td>
+        </tr>
+        <tr>
+            <td><h3>Password: </h3></td>
+            <td><h3><input type="password" name="pwd" /></h3></td>
         </tr>
         <tr>
             <td>
                 <input type="submit" value="Submit"/>
             </td>
-        </tr>
-    </table>
-</form>
-
-<form action="Register.jsp">
-    <table>
-        <tr>
             <td>
-                <input type="submit" value = "Register"/>
+                <a href="register.jsp"><input type="button" value="Register"/></a>
             </td>
         </tr>
     </table>
 </form>
+</div>
 </body>
 </html>
